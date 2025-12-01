@@ -1,42 +1,17 @@
 import { Student } from './components/Student';
 import { initialStudents } from './data/students';
+import { Contador } from './components/Contador';
+import { Header } from './components/Header';
 
 export const App = () => {
   return (
     <>
       <main>
         <div>
-          <header>
-            <div>
-              <span class="material-symbols-outlined text-primary text-3xl">
-                school
-              </span>
-              <h1>Attendance Dashboard</h1>
-            </div>
-            <button>
-              <span class="material-symbols-outlined">person</span>
-            </button>
-          </header>
+          {<Header />}
           <main>
             <div>
-              <section>
-                <div>
-                  <p>Total Students</p>
-                  <p>32</p>
-                </div>
-                <div>
-                  <p>Present</p>
-                  <p>28</p>
-                </div>
-                <div>
-                  <p>Absent</p>
-                  <p>3</p>
-                </div>
-                <div>
-                  <p>Late</p>
-                  <p>1</p>
-                </div>
-              </section>
+              <section>{<Contador />}</section>
               <section>
                 <div>
                   <label>
@@ -47,11 +22,11 @@ export const App = () => {
                   </label>
                 </div>
               </section>
-              <section>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-2">
                 {initialStudents.map((student) => {
                   return <Student key={student.id} student={student} />;
                 })}
-              </section>
+              </div>
             </div>
           </main>
         </div>
