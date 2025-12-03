@@ -6,29 +6,21 @@ import { Header } from './components/Header';
 export const App = () => {
   return (
     <>
-      <main>
+      {<Header />}
+      <main className="bg-gray-100 h-screen">
+        {<Contador />}
         <div>
-          {<Header />}
-          <main>
+          <label>
             <div>
-              <section>{<Contador />}</section>
-              <section>
-                <div>
-                  <label>
-                    <div>
-                      <span class="material-symbols-outlined">search</span>
-                    </div>
-                    <input placeholder="Search student name..." />
-                  </label>
-                </div>
-              </section>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-2">
-                {initialStudents.map((student) => {
-                  return <Student key={student.id} student={student} />;
-                })}
-              </div>
+              <span class="material-symbols-outlined">search</span>
             </div>
-          </main>
+            <input placeholder="Search student name..." />
+          </label>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-2">
+          {initialStudents.map((student) => {
+            return <Student key={student.id} student={student} />;
+          })}
         </div>
       </main>
     </>

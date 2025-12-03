@@ -2,30 +2,30 @@ export const Student = ({ student }) => {
   const { name, id, image } = student;
   return (
     <>
-      <div className="rounded overflow-hidden shadow-lg m-4">
-        <div className="flex items-center gap-4">
+      <div className="rounded-lg shadow-lg m-4 p-3 bg-white">
+        <div className=" flex items-center gap-4">
           <img
-            className="w-16 h-16 rounded-full object-cover"
+            className="w-14 h-14 rounded-full object-cover"
             src={image}
             alt={`Foto de ${name}`}
           />
           <div className="flex flex-col">
-            <h3 className="font-semibold text-gray-900">{name}</h3>
-            <p className="text-sm text-gray-500">ID: {id}</p>
+            <p className="font-semibold text-gray-900 text-sm">{name}</p>
+            <p className="text-xs text-gray-500">ID: {id}</p>
           </div>
-          <span className="ml-auto mr-2 mt-1 px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-600">
+          <span className="ml-auto px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-600">
             Present
           </span>
         </div>
-        <div className="px-6 py-4 flex justify-around">
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        <div className="flex justify-between gap-3 mt-2">
+          <button className="flex-1 px-3 py-2 rounded-xl bg-gray-200 hover:text-white text-gray-600 text-xs font-medium hover:bg-blue-700">
             Present
           </button>
-          <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-            Late
-          </button>
-          <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+          <button className="flex-1 px-3 py-2 rounded-xl bg-gray-200 hover:text-white text-gray-600 text-xs font-medium hover:bg-blue-700">
             Absent
+          </button>
+          <button className="flex-1 px-3 py-2 rounded-xl bg-gray-200 hover:text-white text-gray-600 text-xs font-medium hover:bg-blue-700">
+            Late
           </button>
         </div>
       </div>
