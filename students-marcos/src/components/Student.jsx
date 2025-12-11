@@ -1,4 +1,4 @@
-export const Student = ({ student, changeAssistance }) => {
+export const Student = ({ student, changeAssistance, eliminarEstudiante }) => {
   const { name, id, image, assistance } = student;
   return (
     <>
@@ -43,6 +43,12 @@ export const Student = ({ student, changeAssistance }) => {
             onClick={() => changeAssistance('Late', student)}
           >
             Late
+          </button>
+          <button
+            className="flex-1 px-3 py-2 rounded-xl bg-gray-200 hover:text-white text-gray-600 text-xs font-medium hover:bg-blue-700"
+            onClick={() => eliminarEstudiante(student)}
+          >
+            Eliminar Estudiante
           </button>
         </div>
       </div>
